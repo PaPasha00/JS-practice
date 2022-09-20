@@ -1,0 +1,13 @@
+var countBits = function(n) {
+  var l = '';
+  var g = 0;
+  while (n > 0) {
+    l = (l + (n % 2));
+    n = (Math.floor(n / 2));
+  }
+  l = l.split('')
+  for (p of l) {
+    g += parseInt(p);
+  }
+  return g
+}  
