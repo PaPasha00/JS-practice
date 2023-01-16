@@ -1,0 +1,13 @@
+function reverseWords(str) {
+  let a = ""
+  let finish = ""
+  while (str.length > 0){
+    a = a + str.slice(-1);
+    str = str.slice(0, -1);
+  }
+  a = a.split(" ")
+  for (const i of a){
+     finish = " " + i + finish;
+  }
+  return finish.slice(1)
+}
