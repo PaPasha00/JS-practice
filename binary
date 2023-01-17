@@ -1,0 +1,8 @@
+const binaryArrayToNumber = arr => {
+  let sum = 0;
+  rArr = arr.reverse();
+  for (let i = 0;  i <= arr.length - 1; i++){
+    sum += (parseInt(rArr[i]))* 2**i;
+  };
+  return sum
+};
