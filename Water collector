@@ -1,0 +1,28 @@
+b= [1, 2, 3, 2, 1, 3, 4, 3, 6];
+a = [6, 2, 3, 2, 1, 3, 4, 3, 6];
+
+let water = (blocks) => {
+    let block_left = [...blocks];
+    let block_right = [...blocks];
+    let max_left = Array(blocks.length).fill(0);
+    let max_right = Array(blocks.length).fill(0);
+    let counter = 0;
+    
+    for (let i = blocks.length - 2; i > 0; i--){
+        block_left.pop()
+        max_left[i] = Math.max(Math.max(...block_left));
+    }
+    for (let i = 1; i <= blocks.length - 2; i++){
+        block_right.shift()
+        max_right[i] = Math.max(Math.max(...block_right));
+    }
+    
+    for (let i = 1; i <= blocks.length - 2; i++){
+        counter += Math.min(max_left[i], max_right[i]) - blocks[i];
+    }
+    
+    return counter
+    
+};
+
+console.log(water(a));
