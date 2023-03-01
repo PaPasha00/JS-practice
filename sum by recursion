@@ -1,12 +1,8 @@
 let n = 2;
 
 let sumToN = function(counter, c, sum){
-  if (c == counter){
-      alert( sum + n );
-  }
-  if (c < counter){
-      return sumToN(counter, c + 1, sum + c);
-  }
+  if (c == counter)  alert( sum + n );
+  if (c < counter) return sumToN(counter, c + 1, sum + c);
 };
 
 sumToN(n, 0, 0);
