@@ -1,0 +1,32 @@
+let correctNesting = function(string){
+  
+    if (string.length == 0) return 'Пустая строка';
+    
+    let help = '';
+    let open = '({[';
+    let pairs = {
+        ')' : '(',
+        '}' : '{',
+        ']' : '[',
+    };
+    
+    let substr = string.split('');
+    
+    for (let i = 0; i < string.length; i++){
+       if (open.includes(substr[i])){
+           help = help + substr[i];
+           continue
+       }
+       if (help[help.length - 1] == pairs[substr[i]]){
+           help = help.substring(0, help.length - 1);
+           continue
+       }
+       else{
+            return 'Строка не верна'
+       }
+    } 
+    
+    if (help.length == 0) return  'Строка верна'
+    
+    else return 'Строка не верна'
+}
