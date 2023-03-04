@@ -1,0 +1,8 @@
+let polendrom = function (string) {
+  if (string.length == 0) return 'Пустая строка'
+  
+  if (string.toLowerCase() == string.toLowerCase().split('').reverse().join('')){
+    return true
+  }
+  else return false
+}
