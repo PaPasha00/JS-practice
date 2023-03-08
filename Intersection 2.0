@@ -1,0 +1,17 @@
+const Intersections = function(a, b) {
+	let result = [];
+
+	let map = a.reduce((acc, i) => {
+		acc[i] = acc[i] ? acc[i] + 1 : 1;
+		return acc	
+	}, {})
+
+	for (let n = 0; n < b.length; n++) {
+		if (map[b[n]] > 0) {
+			result.push(b[n])
+			map[b[n]] -= 1
+		}
+	}
+
+	return result;
+};
