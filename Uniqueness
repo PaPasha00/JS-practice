@@ -1,0 +1,10 @@
+let a = [1, 2 ,3, 1];
+let b = [1, 2, 4];
+
+let Uniqueness = function(a ,b){
+  let c = [...a, ...b];
+  c = [... new Set(c)];
+  return c
+};
+
+console.log(Uniqueness(a, b))
