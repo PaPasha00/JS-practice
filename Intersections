@@ -1,0 +1,13 @@
+const Intersections = function(a, b) {
+  let arr = [];
+  
+  for (let n = 0; n < a.length; n++) {
+    if (b.includes(a[n])) {
+      arr.push(a[n])
+      let index = b.indexOf(a[n]);
+      b.splice(index, index)
+    } 
+  }
+  
+  return arr
+};
