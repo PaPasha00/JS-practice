@@ -1,0 +1,16 @@
+const firstIUnique = function(a) {
+  str = a.split('')
+  
+  let map = str.reduce((acc, i) => {
+    acc[i] = acc[i] ? acc[i] + 1 : 1;
+    return acc;
+  }, {})
+  
+  for (let n = 0; n < str.length; n++) {
+    if (map[str[n]] == 1) {
+      return n;
+    }
+  }
+  
+  return -1;
+};
