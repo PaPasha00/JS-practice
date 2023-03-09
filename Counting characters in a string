@@ -1,0 +1,10 @@
+function count (string) { 
+  let str = string.split('');
+  
+  let map = str.reduce( (acc, i) => {
+		acc[i] = acc[i] ? acc[i] + 1 : 1;
+		return acc;
+	}, {})
+  
+  return map;
+}
