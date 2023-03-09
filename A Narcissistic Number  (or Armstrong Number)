@@ -1,0 +1,11 @@
+function narcissistic(value) {
+  let arr = String(value).split('');
+  let degree = arr.length;
+  let sum = 0;
+  
+  for (let n = 0; n < degree; n++) {
+    sum += (parseInt(arr[n]))**degree
+  }
+  
+  return (sum == value);
+}
