@@ -1,1 +1,1 @@
-Here I download task solutions from CodeWars
+This is where I keep my codes for solving algorithm tasks
