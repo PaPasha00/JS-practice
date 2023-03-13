@@ -1,0 +1,11 @@
+let shuffle = function(arr) {
+  for (let n = arr.length - 1; n > 0; n--) {
+    let current = arr[n];
+    let random = Math.floor(Math.random() * arr.length);
+    
+    arr[n] = arr[random]
+    arr[random] = current
+  }
+  
+  return arr;
+}
