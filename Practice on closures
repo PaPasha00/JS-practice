@@ -1,0 +1,13 @@
+let urlMaker = function(post) {
+  return function(adress) {
+    return `https://${adress}.${post}`;
+  };
+};
+
+let urlRu = urlMaker('ru');
+let urlCom = urlMaker('com');
+
+console.log(urlCom('youtube'));
+console.log(urlCom('google'));
+console.log(urlRu('yandex'));
+console.log(urlRu('translate.yandex'));
