@@ -1,0 +1,10 @@
+let polendromForNum = function(num) {
+  num = String(num);
+  if (num === num.split('').reverse().join('')) {
+    return true
+  } else {
+    return false
+  }
+  
+  return false
+}
