@@ -1,0 +1,21 @@
+function pigIt(str){
+  let arr = str.split(' ');
+  result = [];
+  let symbols = [".", "!", "?", "/", "|", "/"];
+  for (let n = 0; n < arr.length; n++) {
+    if ( symbols.indexOf(arr[n]) != -1 ) {
+      result.push(arr[n])
+    }
+    else {
+      let word = arr[n].split('');
+      let first = word.shift()
+      word.push(first, 'ay')
+      let pigWord = word.join('')
+      result.push(pigWord)
+    }
+    
+  }
+  let resultArr = result.join(' ');
+  
+  return resultArr
+};
