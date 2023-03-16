@@ -1,0 +1,18 @@
+function jewelry(j, s) {
+  s = s.split('');
+  j = j.split('');
+  let counter = 0;
+  
+  let map = s.reduce((acc, i) => {
+    acc[i] = acc[i] ? acc[i] + 1 : 1;
+    return acc
+  }, {})
+  
+  for (let n = 0; n < j.length; n++) {
+    if (map[j[n]] > 0) {
+      counter += map[j[n]]
+    }
+  }
+  
+  return counter
+};
