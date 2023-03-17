@@ -1,0 +1,19 @@
+function scramble(str1, str2) {
+  let letters = str1.split('');
+  let word = str2.split('');
+  
+  let map = letters.reduce((acc, i) => {
+    acc[i] = acc[i] ? acc[i] + 1 : 1;
+    return acc
+  }, {})
+  
+  for (let n = 0; n < word.length; n++) {
+    if (map[word[n]] > 0) {
+      map[word[n]] -= 1;
+    } else {
+      return false
+    }
+  }
+  
+  return true
+}
