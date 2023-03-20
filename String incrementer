@@ -1,5 +1,4 @@
 function incrementString (strng) {
-  let nums = ['1', '2', '3', '4', '6', '7', '8', '9', '0'];
   let string = strng.split('');
   let newStr = [];
   let numbers = [];
@@ -7,7 +6,7 @@ function incrementString (strng) {
   let flag = true;
   
   for (let n = string.length -1; n >= 0; n--) {
-    if (nums.indexOf(string[n]) != -1 && flag === true) {
+    if ((string[n] > -1 || string[n] < 10) && flag === true) {
       numbers.unshift(string[n]);
     } else {
       newStr.unshift(string[n])
