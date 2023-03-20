@@ -1,0 +1,38 @@
+function incrementString (strng) {
+  let nums = ['1', '2', '3', '4', '6', '7', '8', '9', '0'];
+  let string = strng.split('');
+  let newStr = [];
+  let numbers = [];
+  let numbrs;
+  let flag = true;
+  
+  for (let n = string.length -1; n >= 0; n--) {
+    if (nums.indexOf(string[n]) != -1 && flag === true) {
+      numbers.unshift(string[n]);
+    } else {
+      newStr.unshift(string[n])
+      flag = false
+    }
+  }
+  
+  
+  let numLen = numbers.length;
+  if (numbers.length != 0) {
+    numbrs = parseInt(numbers.join('')) + 1;
+  } else {
+    numbrs = 1;
+  }
+
+  let newNums = String(numbrs).split('');
+  
+  if (newNums.length != numLen) {
+    while (newNums.length  < numLen) {
+      newNums.unshift('0');
+    }
+  }
+  
+  
+  let result = newStr.join('') + newNums.join('');
+  
+  return result
+}
