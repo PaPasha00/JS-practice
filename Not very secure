@@ -1,22 +1,17 @@
 function alphanumeric(string){
   if (string == '') return false
   
-  let newStr = string.split('');
-  
   function isLetter(str) {
     let regexp = /^\p{L}$/u;
     return regexp.test(str);
   }
   
-  for (let n = 0; n < newStr.length; n++) {
-    if (isLetter(newStr[n])) {
-      continue
-    } else if (parseInt(newStr[n]) >= 0) {
+  for (let char of string) {
+    if (isLetter(char) || parseInt(char) >= 0) {
       continue
     } else {
       return false
     }
   }
-  
   return true
 }
