@@ -1,0 +1,31 @@
+function rgb(r, g, b){
+  let result = '';
+  
+  function hex(num) {
+    if (num > 255) return 'FF'
+    if (num < 0) return '00'
+    let n = '';
+    let letterArr = ['A', 'B', 'C', 'D', 'E', 'F'];
+    
+    while (num > 0) {
+      if (num % 16 < 10) {
+        n = num % 16 + n
+        num = Math.floor(num/16)
+      } else {
+        n = letterArr[num % 16 - 10] + n
+        num = Math.floor(num/16)
+      }
+    }
+    
+    if (n == '') {
+      return "00"
+    } else if (n.length === 1) {
+      return '0' + n
+    } else {
+      return n
+    }
+  }
+  
+  result += hex(r) + hex(g) + hex(b)
+  return result
+}
