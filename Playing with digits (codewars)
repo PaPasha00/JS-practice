@@ -1,0 +1,18 @@
+function digPow(n, p){
+  let finish = n;
+  let sum = 0;
+  let st = p + (n + '').length - 1; 
+  
+  for (let i = 0; i < (n + '').length; i++) {
+    sum += (finish % 10) ** st
+    st -= 1
+    finish = Math.floor(finish / 10)
+  }
+  let k = sum / n;
+  
+  if (Math.floor(k) === k) {
+    return k
+  } else {
+    return -1
+  }
+}
