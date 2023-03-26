@@ -1,0 +1,18 @@
+let overDiag = function(matrix) {
+  let top = [];
+  let left = [];
+  let right = [];
+  let bottom = [];
+  
+  for (let n = 1; n < matrix.length - 1; n++) {
+    top.push(matrix[0][n])
+    left.push(matrix[n][0])
+    bottom.push(matrix[matrix.length - 1][n])
+    right.push(matrix[n][matrix.length - 1])
+  }
+  
+  console.log(top)
+  console.log(left)
+  console.log(right)
+  console.log(bottom)
+}
