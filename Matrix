@@ -2,12 +2,9 @@ let overDiag = function(matrix) {
   
   for (let n = 0; n < matrix.length; n++) {
     for (let m = 0; m < matrix.length; m++) {
-      if (n === m || (n + m) === matrix.length) {
-        continue
-      } else {
+      if (n != m && ((n + m + 1) != matrix.length + 0)) {
         console.log(matrix[n][m])
       }
     }
   }
-  
 }
