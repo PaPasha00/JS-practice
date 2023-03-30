@@ -3,12 +3,6 @@ let romanCount = function(num) {
   let preMax = (Math.floor(num / 100)) % 10;
   let preMin = (Math.floor(num / 10)) % 10;
   let min = (num % 10);
-  let ten = 'X'; //10
-  let fve = 'L'; //50
-  let hund = 'C'; //100
-  let fiveHund = 'D'; //500
-  let sous = 'M'; //1000
-  
   
   let changer = function(nm) {
     let res = '';
@@ -32,7 +26,7 @@ let romanCount = function(num) {
     } else if (nm === 9) 
       return 'IX'
   }
-  
+
   let maxFns = '';
   if (maxim === 4) {
     maxFns = 'MMMM';
