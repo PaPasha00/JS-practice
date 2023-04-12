@@ -1,0 +1,21 @@
+const p = new Promise(function(resolve, reject) {
+	setTimeout(() => {
+		console.log('start')
+		let obj = {
+			frs: '123', 
+			sec: '1222'
+		}
+		resolve(obj)
+	}, 2000)
+})
+
+p.then(object => {
+	return new Promise(function(resolve, reject) {
+		setTimeout(() => {
+		console.log('second promise')
+		object.thr = '11111'
+		console.log(object)
+		resolve()
+		}, 2000)
+	})
+}).finally(() => console.log('finally'))
